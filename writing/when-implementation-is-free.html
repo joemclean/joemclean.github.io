@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>When Implementation is Free — Joe McLean</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div class="site">
+    <a class="back-link" href="../index.html">&larr; Back to home</a>
+    <article>
+      <div class="article-header">
+        <h1>When Implementation is Free</h1>
+        <p class="article-meta">January 2025 · Originally on <a href="https://medium.com/@islandlife/when-implementation-is-free-14ced3554f9c">Medium</a></p>
+      </div>
+      <div class="prose">
+        <figure><img alt="" src="https://cdn-images-1.medium.com/max/1024/1*aklroaYsQlcGiZvj_1iIcA.jpeg" /></figure>
+
+        <p>Over the last few weeks, I've been playing with Claude for a few side projects, and feel a step change in its coding ability. Twice I've gone from prompt to running app in production in an evening. Earlier this year, I developed a piece of music hardware from scratch running software in C++, a language I couldn't write code in. I am realizing rapidly that we need to prepare for a world where implementation costs drive to zero. And the more I think about it — the more I realize how profound this shift will be to what it means to design software in the first place.</p>
+
+        <h3>The end of scarcity</h3>
+
+        <p>For decades, product development has been defined by scarcity. Agile, Scrum, and Kanban are in essence systems for allocating limited engineering capacity. Ruthless prioritization was the core skill. Deploy your company's most expensive resource — engineering time — against the initiatives most likely to have impact.</p>
+
+        <p>But what happens when AI can transform product specifications into working code in minutes? The classic "effort vs. impact" quadrant analysis is a vertical line. Everything is "low effort, variable impact."</p>
+
+        <p>This has a surprising outcome: unlimited implementation capability makes product decisions harder, not easier. Without the constraint of engineering time to force ruthless prioritization, product teams must deal with much harder questions about coherence, complexity, and cognitive load. A feature that takes no time to implement still takes time to understand, to learn, to use.</p>
+
+        <p>The question is no longer "What should we build next?" but rather "Should we build it?"</p>
+
+        <p>This shift reshapes competitive advantage in software. When implementation cost is near-zero, simply building more features can no longer differentiate products. Any competitor can easily clone your new feature in an afternoon. Instead, competitive advantage shifts entirely to judgment — the ability to craft coherent, focused products that solve problems elegantly, not exhaustively.</p>
+
+        <p>The winners won't be the companies that say "yes" to every feature request, but those with discipline.</p>
+
+        <p>Product managers' roles will transform accordingly. Instead of being primarily resource allocators, they become complexity managers. The key skill shifts from prioritization to understanding and managing the intricate web of interactions between features. If that sounds like a design role to you — you're right. But what you're "designing" might be different than you think.</p>
+
+        <h3>The rise of experience debt</h3>
+
+        <p>When every feature can become reality overnight, the only constraint is user understanding. Each new feature adds cognitive load, each new interaction pattern has a learning curve, each new navigation path increases complexity. Each time we add a feature, we borrow against our users' future ability to understand and navigate our product.</p>
+
+        <p>This debt compounds. A single new feature might seem simple in isolation, but creates exponential complexity in how it interacts with existing features. A filter here, a sorting option there, a new view type somewhere else — suddenly users are facing a combinatorial explosion of possibilities. The interface that was once clear becomes cluttered with options, settings, and modes.</p>
+
+        <p><strong>The idea of "UX debt" is nothing new, but what's new is that it is now 100% of your product development challenge.</strong></p>
+
+        <p>Rapid prototyping with AI amplifies both the opportunities and risks. We can quickly test different approaches to solving user problems, but we can just as quickly accumulate a mess of half-baked solutions. Every prototype that makes it to production adds to the cognitive surface area users must navigate.</p>
+
+        <h3>Adaptive UI</h3>
+
+        <p>One of the most intriguing possibilities is adaptive or agentic interfaces that change or morph in response to context and commands in real time.</p>
+
+        <p>The idea of interfaces that adapt to user needs isn't new. Windows 95 had a feature that would hide less-used menu items, and Clippy needs no introduction. Google's Priority Inbox tried to automatically sort your email importance (and was quietly retired). Yet despite decades of attempts, adaptive interfaces are largely a failed promise. The core problem is predictability — interfaces need to be predictable to be usable.</p>
+
+        <p>Today's AI systems far exceed previous generations in intelligence and capability — they could literally "code" an interface as you use it. But the central issue remains: How to reconcile intelligent adaptation with user trust and predictability? Navigating a constantly morphing interface, even one making perfect choices, feels like trying to navigate a room where the furniture keeps rearranging itself.</p>
+
+        <p>We need to imagine a new language of UI design, perhaps what we might call "bounded fluidity":</p>
+
+        <ol>
+          <li>The fundamental information architecture and core interaction patterns remain stable and designed</li>
+          <li>AI adaptation happens within well-defined boundaries and follows explicit rules</li>
+          <li>Changes are telegraphed and reversible</li>
+          <li>Users maintain high-level control over adaptation preferences</li>
+        </ol>
+
+        <p>Rather than having AI freely reshape the entire interface, it works within a designed system of states and transitions. Think of it like a well-designed physical space that can transform — walls that move, but along tracks, furniture that rearranges, but according to predefined layouts. You know where to step, what to expect, you've been here before.</p>
+
+        <p>It's no surprise that conversational interfaces have become the breakout UI pattern for AI. Language itself is adapted to this challenge: rigid structural rules create predictability, while enabling near-infinite expression within those bounds. Complex ideas emerge from simple patterns and a set vocabulary. Context shapes meaning without breaking understanding. Everyone understands the "ground rules" of a conversation, and the basic back and forth puts the interaction on understandable rails, even if the possbilities are infinite.</p>
+
+        <p>The future of interface design might shift from creating static screens to designing adaptive systems — defining not just how interfaces look and work, but how they evolve and transform. Like a grammar for user experience, these systems would have fundamental rules governing how elements combine and transform while maintaining coherence. Imagine interfaces that can shift between different "registers" like language — formal and structured for complex tasks, casual and fluid for exploration, yet always following patterns users can internalize and trust.</p>
+
+        <p>To design adaptive systems , we need a grammar of possible adaptations. The designer's role becomes not just arranging elements on a screen, but defining the rules of how those elements can combine and transform while maintaining meaning.</p>
+
+        <p>The challenge ahead is significant: how do we create bounded systems that are flexible enough to adapt yet structured enough to trust? How do we design not just individual screens or interfaces, but languages and systems? The teams that solve this problem will shape our relationship to AI.</p>
+
+        <h3>New tools</h3>
+
+        <p>The tools we've traditionally used to manage UX — personas, journey maps, task flows — were designed for a world where implementation constraints naturally limited complexity and users were dealing with fixed flows and UI. We need new tools to understand and manage the cumulative weight of design decisions on user cognition, map where these problems run deepest, and evaluate alternative architectures. Traditional information architecture takes on new importance as the critical framework for managing complexity and scaleability.</p>
+
+        <p>Teams might use "cognitive load simulators" that model how new features impact user mental load across different contexts and expertise levels. "Pattern consistency analyzers" could flag when new functionality breaks existing interaction patterns. "Adaptation visualization tools" might show how interfaces morph across different user journeys, highlighting potential disorientation points. "Mental model mapping" tools could track how users conceptually organize product functionality, helping identify natural boundaries for adaptation.</p>
+
+        <p>Imagine a set of visualization tools borrowed from engineering and architecture. Heat maps could show areas of high cognitive friction and navigation density. Structural diagrams could map "load-bearing" features that others depend on. Stress analysis could highlight where too many features compress into limited cognitive space. Integrity testing could show how well our information architecture foundations support the complexity above. These tools could help teams simulate the impact of new features before implementation, identify structural weak points, and make the invisible cost of complexity visible to stakeholders.</p>
+
+        <h3>New practices</h3>
+
+        <p>We also should expect that the practice of product development itself will evolve. The traditional rhythms of sprints, stories, and releases will be artifacts of a world constrained by engineering capacity.</p>
+
+        <p>The future of the product practice will be shaped by three key shifts:</p>
+
+        <ol>
+          <li>From resource management to complexity management</li>
+          <li>From feature prioritization to feature discretion</li>
+          <li>From fixed releases to instantaneous evolution</li>
+        </ol>
+
+        <p>Instead of sprint planning meetings focused on capacity and prioritization, teams might run "complexity reviews" — examining how proposed changes affect the overall cognitive load of the system. Morning standups become reviews of interface adaptations (potentially automated!) and their impact. Sprint reviews focus on pattern evolution rather than feature completion. Design critiques examine not just static screens but adaptation rules and boundaries.</p>
+
+        <p>Product managers become more like architects, concerned with how new capabilities can be integrated without breaking users' mental models. The role could change radically, fully shedding its project management responsibilities, merging with design, or becoming an extension of the business function. User research takes on new importance, but with a different focus. Instead of validating whether features are valuable enough to justify engineering investment, research focuses on understanding how users build and maintain mental models of the system. How do they navigate complexity? Where do they struggle with cognitive load? What patterns feel natural versus forced? QA expands to include testing for cognitive load and pattern consistency.</p>
+
+        <p>Instead of usability testing specific flows, researchers might run "adaptation threshold tests" to evaluate how much interface evolution users can handle before feeling lost. "Card sorting" could evolve into "pattern sorting" — having users group not just content but interaction patterns and transitions. Eye tracking and cognitive load measurement could become central to research, to assess not just where users look, but how hard they're working to process what they see.</p>
+
+        <p>Many of these tasks will be delegated in part or in whole to AI. Teams will become smaller, maybe even teams of one, with leaders working in blended roles that advocate for a certain set of value and coordinate its execution.</p>
+
+        <h3>New culture</h3>
+
+        <p>A culture of 'no' will become a matter of survival. The software you build will be able to do literally anything, which is breathtaking, but also means nothing — because everyone else can do anything too. In a world of infinite possibility, the only thing that matters is what you choose not to do. The winners will be the ones that build better tools — interfaces that adapt but feel solid in your hands, like a trusted hammer or a camera you know inside and out. Products that expand with your expertise but maintain their essential character.</p>
+
+        <p>How hard it is to really imagine this highlights the challenge ahead. Good thing we can build fast and iterate.</p>
+
+        <h3>Author's Note</h3>
+
+        <div class="article-note">
+          <p>This essay was written in collaboration with Claude, an AI assistant. While I contributed to the structure and editing, many of the core insights and a significant portion of the writing came from Claude, with multiple rounds of feedback and iteration.</p>
+
+          <p>This feels particularly relevant given the essay's subject matter — the piece itself is an example of AI amplifying rather than replacing human capability. The development process mirrored our thesis: the challenge wasn't in generating content (implementation was nearly free!), but in exercising judgment about what to keep, what to cut, and how to shape ideas into a coherent whole.</p>
+
+          <p>The collaboration mirrored the "bounded fluidity" the essay advocates for — human judgment providing the framework and direction, AI offering possibilities within those bounds, and both parties building on each other's ideas to create something neither would have created alone. The conversational interface was a natural, expected interface for this kind of work, and mirrored many interactions I have with my colleagues every day as we refine briefs and presentations.</p>
+
+          <p>I have deeply mixed feelings about this. For transparency, <a href="https://gist.github.com/joemclean/d37829ec1399c2e44034c1be666b5ce5">the entire interaction is available on my Github</a>. I felt that Claude was a true co-collaborator on this piece and I am genuinely not certain where the authorship boundary lies. We are in for a strange new world.</p>
+        </div>
+      </div>
+    </article>
+    <a class="back-link" href="../index.html">&larr; Back to home</a>
+    <footer>
+      <p>Joe McLean &mdash; 2026</p>
+    </footer>
+  </div>
+</body>
+</html>

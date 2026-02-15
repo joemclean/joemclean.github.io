@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How modular synthesizers and music software inspired Miro's Flows — Joe McLean</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div class="site">
+    <a class="back-link" href="../index.html">&larr; Back to home</a>
+    <article>
+      <div class="article-header">
+        <h1>How modular synthesizers and music software inspired Miro's Flows</h1>
+        <p class="article-meta">December 2025 · Originally on <a href="https://medium.com/@islandlife/how-modular-synthesizers-and-music-software-inspired-miros-flows-47cb9c1cb790">Medium</a></p>
+      </div>
+      <div class="prose">
+        <figure>
+          <img alt="" src="https://cdn-images-1.medium.com/max/1024/1*XNJzeI3pjry51tk76giJWQ.jpeg" />
+          <figcaption>My pandemic-era modular rig (Photo credit <a href="https://www.instagram.com/erikakapin/?hl=en">Erika Kapin</a>)</figcaption>
+        </figure>
+
+        <p>This week, <a href="https://miro.com/ai/flows/">Miro's new AI feature, Flows</a>, is going to public beta as part of the broader AI Canvas launch I've been leading for the last year. I am very proud of what the team has built together. I believe it represents a novel way of interacting with AI that will unlock a lot of creative force. On the verge of our broader launch, I want to share a bit about where the idea came from.</p>
+
+        <p>Like many ideas, it came from cross pollination from an outside discipline. To tell the story, I need to go deep on one of my very favorite topics: Machine music and modular synthesis.</p>
+
+        <h3>Traditional Music Software</h3>
+
+        <p>For the last 60 years or so, there have been two ways to think about making music with a computer.</p>
+
+        <p>The first translates traditional composition to a computer screen. This software lineage runs from handwritten scores, to tape machines, to early tools like <a href="https://en.wikipedia.org/wiki/Fairlight_CMI">Fairlight CMI</a> ,the <a href="https://www.muzines.co.uk/articles/steinberg-cubase/137">first versions of Cubase</a>, and "trackers" like <a href="https://www.youtube.com/watch?v=b0kcuedTg8Q">Protracker</a>, to modern digital audio workstations like Ableton Live, Logic, Garageband, and FL Studio. This is how most recorded music (electronic or otherwise) gets made these days. You record real audio, or write "digital sheet music" (MIDI) performed by digital instruments. Stack up layers of sounds, recorded and composed linearly, arranged on a timeline, mixed together, and eventually "bounce" out an audio file that ends up on Spotify or other distribution platforms. A human author specifies what happens and when, and the composition is fully deterministic.</p>
+
+        <figure>
+          <div class="image-row">
+            <img alt="" src="https://cdn-images-1.medium.com/max/1024/1*Wgys_Md5xLx0HeNZ7cJhYw.png" />
+            <img alt="" src="https://cdn-images-1.medium.com/max/636/1*SnHa-jediMIW_bvVvBaYbw.jpeg" />
+            <img alt="" src="https://cdn-images-1.medium.com/max/640/1*RN5TCk-SYmnNxau-FuwqcQ.png" />
+          </div>
+          <figcaption>Early software interfaces for music making — Fairlight CMI, Cubase, and Protracker</figcaption>
+        </figure>
+
+        <figure>
+          <div class="image-row">
+            <img alt="" src="https://cdn-images-1.medium.com/max/1024/0*iDNuqADIz5vR4a30.jpeg" />
+            <img alt="" src="https://cdn-images-1.medium.com/max/1024/1*w4tRBjoC-GRnztsd946_0A.jpeg" />
+            <img alt="" src="https://cdn-images-1.medium.com/max/700/1*WCio_IDy2xDH-CY4TEicig.jpeg" />
+          </div>
+          <figcaption>More modern DAWs — Ableton Live, Logic X, FL Studio</figcaption>
+        </figure>
+
+        <p>There's been plenty of innovation within this model, and its development is itself a fascinating history. It's gone through its own revolutions, even in just the past few years. Ableton Live r<a href="https://www.youtube.com/watch?v=b0kcuedTg8Q">ebuilt the traditional linear workflow around loops, tempo matching, and timestretching</a>, among other advances. An entire ecosystem of "plugins" (digital instruments and effects designed to integrate with these tools) expanded sonic possibilities. Countless UI innovations emerged— piano rolls, graphical step sequencing UIs, chord-based sequencers and control surfaces, and many more. I spent years at <a href="https://splice.com/">Splice</a> building a content ecosystem designed to make it easier to layer in loops and samples.</p>
+
+        <figure>
+          <div class="image-row">
+            <img alt="" src="https://cdn-images-1.medium.com/max/970/1*pG8tU-b3HxJNRBz-TFkIeQ.jpeg" />
+            <img alt="" src="https://cdn-images-1.medium.com/max/589/1*oDYRe3jZp_GZVzCiYkiXwA.jpeg" />
+            <img alt="" src="https://cdn-images-1.medium.com/max/315/1*Un086d7advf6_rwWqXewMQ.png" />
+          </div>
+          <figcaption>Logic's Piano Roll, FL Studio's step sequencer, Studio One's chords tool</figcaption>
+        </figure>
+
+        <p>Despite the tech evolution, it's still composition in the classical sense. Producers add layers of deterministically authored parts, performed by digital instruments or real recorded humans, even if the process is faster and more fluid than notation on staff paper. Even the latest wave of AI powered music startups are constrained to this path, in that their result is ultimately a static audio file. You can't do much to control it, except to prompt it again to make something new.</p>
+
+        <p>But there's another branch of the tree. Starting in the mid-1960s, a different way of making music became possible. Like many developments in music history, it was a product of new technology.</p>
+
+        <h3>Discovering Generative Music</h3>
+
+        <p>About 11 years ago, I went to see the "David Bowie Is" exhibition in Chicago. There was a section about Bowie and Brian Eno's experiments with generating lyrics through cut-up slips of paper and custom software, and a brief plaque describing Eno's experiments with "machine music", an idea I had never encountered before. That was my entry point into discovering Eno's work, and through him, the whole field of generative and ambient music.</p>
+
+        <figure>
+          <div class="image-row">
+            <img alt="" src="https://cdn-images-1.medium.com/max/736/1*1HOPYuGxBc8RMxXjHEAIrQ.jpeg" />
+            <img alt="" src="https://cdn-images-1.medium.com/max/1024/1*9xCNqc4vIOOSSX3icO2yfQ.jpeg" />
+            <img alt="" src="https://cdn-images-1.medium.com/max/1024/1*CSAWMg_TbVuL_OIXNlgNeg.png" />
+          </div>
+          <figcaption>1. Bowie and Eno in the studio in Berlin, 2. Cut up slips of paper for "analog" lyric generation, 3. Eno's EMI synthesizer (thank you <a href="https://www.modwiggler.com/forum/viewtopic.php?t=201153">bsilverberg</a> of modwiggler)</figcaption>
+        </figure>
+
+        <p>"Machine music" was unlocked by the invention of the synthesizer. If you're not a modular synth head, you may think of a synthesizer as something with a keyboard and a bunch of knobs on it, and probably have some kind of 80s-casette-tape tinged idea of its sound, maybe someone with big hair playing it. And that is a big part of what's great about synthesizers! But a stricter definition would be: a synthesizer is a machine that makes sounds according to rules.</p>
+
+        <p>And once that machine exists, the rules can be whatever you want. This insight, discovered by some of the synthesizer's earliest inventors (Buchla, Moog, Pearlman, many others), led to the emergence of a new type of music, where you design creative rules for music machines to operate. Rather than composing a specific piece and drawing in notes, you're designing a system. You define a set of rules and relationships that generate music spontaneously. The composition <em>is</em> the system that plays it.</p>
+
+        <figure>
+          <div class="image-row">
+            <img alt="" src="https://cdn-images-1.medium.com/max/1024/1*8RSCG3YVtFiSiecoZLc9vA.png" />
+            <img alt="" src="https://cdn-images-1.medium.com/max/1024/1*bEZmj-dK1SEql21d53I9Tg.jpeg" />
+            <img alt="" src="https://cdn-images-1.medium.com/max/1024/1*bpNHlDrlIYZhFSb2sfWvXg.png" />
+          </div>
+          <figcaption>Don Buchla, Robert Moog (sideburns!), and Alan Pearlman with some early patchable synthesizers</figcaption>
+        </figure>
+
+        <p>As a result, your role as a composer is different. Instead of writing individual notes, you're thinking about structures, behaviors, patterns, and logic, and strategically evolving them over time. You don't write a specific drum pattern. Instead, you create a clock at a certain speed for the piece, and say that a kick drum should "happen" on <em>every 4th </em>pulse, a snare on <em>every 8th </em>pulse. Maybe we add hi-hat cymbal on <em>every single</em> pulse but <em>only</em> <em>50% of the time</em>, and actually maybe that probability should <em>slowly ramp up to</em> <em>80%</em>, but <em>only</em> <em>while</em> the synth is playing .Whether the synth is playing is itself a <em>weighted coin flip</em> that happens <em>every 64th</em> beat. And the weighting of that coin flip fluctuates up and down on a very slow, 3-minute long oscillating cycle that shifts the pitch up and down as well…</p>
+
+        <p>This allows you to work at a higher level of abstraction, thinking about moods, shapes, and textures, translating them into cascading logic that creates music on the fly. Of course, many talented composers think this way, even when writing things the old fashioned way. But in a modular environment it is the primary workflow, with direct control over these abstractions and knobs to adjust them. It encourages a different type of thinking and consequently a different kind of music.</p>
+
+        <p>One important consequence, and a novel creative possibility, is that this encourages you to give up direct control over the composition. By introducing controlled randomness into the system, every performance becomes unique. This is critical to create variation, and it helps generative compositions sound organic and consistently interesting. It's not pure chaos; you regulate the randomness with constraints and quantizers. This creative push and pull with unpredictability is a fundamental creative loop when patching a modular synth.</p>
+
+        <figure>
+          <div class="image-row">
+            <img alt="" src="https://cdn-images-1.medium.com/max/1024/1*m0CoxAjxTV_AEdltUN6ilQ.jpeg" />
+            <img alt="" src="https://cdn-images-1.medium.com/max/1024/1*2Q-QcRj4n8jXtdbyfcMWhQ.jpeg" />
+          </div>
+          <figcaption>Jamming and patching with Sara at the Miro holiday party in Berlin</figcaption>
+        </figure>
+
+        <p>There is a creative joy to this. You can shift your role from author to explorer. You're in a feedback loop with the system, listening to what it produces, tweaking parameters, and curating the most interesting moments. In a co-creative dialogue, you design, the system responds, and somewhere in that exchange, ideas emerge that neither of you could have produced alone.</p>
+
+        <h3>The Interface Problem</h3>
+
+        <p>This is about as abstract as creative work can get. Music interfaces have always had to deal with abstraction . You can't see sound, so everything is fundamentally a visualization of data. Waveforms, piano rolls, spectrograms, and VU meters are all analogies for something invisible. Using space, color, size, or positioning, they communicate something you can't see normally via metaphor.</p>
+
+        <p>But in modular environments the challenge runs even deeper, because you are trying to manipulate the data itself more directly. The deep truth of modular synthesis and generative composition is that ultimately everything is data. How dense a pattern is, how loud a sound is, how aggressive a timbre feels, whether an instrument is playing at all can all be represented as numbers. Or in the delightfully analog world of Eurorack synthesizers, <em>everything is control voltage</em>. Anything can be a signal, anything can control anything else. Practitioners return to this insight again and again: all recorded music is voltage over time.</p>
+
+        <p>When you're designing systems at this level of abstraction, where signals feed back into each other, where control data and audio data flow through complex interconnected networks, you desperately need tools that help you see what's happening. In the world of analog modular, these connections are literally manifested in patch cables. You take an output, plug it into an input, and the physical wire carries the signal. Change the cable and you change the flow. Unpatched systems make no sound at all, since there's no cable to carry the signal to the output.</p>
+
+        <figure>
+          <img alt="" src="https://cdn-images-1.medium.com/max/1024/1*BBdbE76gIW6TGdZ6DXOvvg.jpeg" />
+          <figcaption>A "patch" on the classic Doepfer 100 system</figcaption>
+        </figure>
+
+        <p>Just as the traditional world of composition was translated to software in the 80s and 90s, so too was modular synthesis. But with a different workflow, different goals, and different visualization challenges, this branch of music making followed a different evolutionary path of interface design. Propellorhead's Reason, VCV Rack, and NI's Reaktor have leaned into skeuomorphism and literally represented patch cables.</p>
+
+        <figure>
+          <div class="image-row">
+            <img alt="" src="https://cdn-images-1.medium.com/max/791/1*mB81UCYCCzDntoVshoAaOQ.png" />
+            <img alt="" src="https://cdn-images-1.medium.com/max/1024/1*YINZwl-MqxSIaAzVUMXQug.jpeg" />
+            <img alt="" src="https://cdn-images-1.medium.com/max/1024/1*gExLVlzOlt1iwJxmXQ1qcw.png" />
+          </div>
+          <figcaption>Reason, Reaktor, and VCV Rack</figcaption>
+        </figure>
+
+        <p>Open-source Pure Data ("PD") and its commercialized offshoot MaxMSP went more abstract, and took the "everything is data" even further, opening up cross modulation with video and other types of data. (Pure Data is so "pure" that it can be complied to C.)</p>
+
+        <figure>
+          <div class="image-row">
+            <img alt="" src="https://cdn-images-1.medium.com/max/906/1*yf1XZK6GIeuKIzibmC5HHA.png" />
+            <img alt="" src="https://cdn-images-1.medium.com/max/1024/1*6StFIQawlL6f3MbUmZp2ZQ.png" />
+          </div>
+          <figcaption>Pure Data and MaxMSP</figcaption>
+        </figure>
+
+        <p>More recently, Bitwig's Grid attempted a more user friendly take that bridged to traditional timeline-based DAWs. I'll spare you further digression on the deeper-cut picks (Reaktor, Kyma, Usine, Flowstone, Nord Modular G2 Editor…) but suffice to say that there are dozens of us! Dozens!</p>
+
+        <figure>
+          <div class="image-row">
+            <img alt="" src="https://cdn-images-1.medium.com/max/1024/1*C82RdbWUCdNF_FgkWEwe-Q.png" />
+            <img alt="" src="https://cdn-images-1.medium.com/max/1024/1*46-ulCseJJuiQUXx38ywiQ.jpeg" />
+          </div>
+          <figcaption>Simple and complex examples from Bitwig's Grid</figcaption>
+        </figure>
+
+        <p>Each tool makes its own creative choices, and carries its own strengths and limitations. But they all share the same core concept of patching connections to route data around a complex system. I like to think of this as convergent evolution, much like sharks and dolphins both independently developing fins to adapt to an aquatic environment. While makers of these tools certainly inspired each other, design choices also emerged through decades of practitioners discovering what actually works when you're orchestrating abstract systems. The patch cable makes invisible data flow visible, and the nodes encapsulate useful functions. The tool is a canvas to connect ideas and watch them interact.</p>
+
+        <h3>What does this have to do with Miro?</h3>
+
+        <p>If you came in more interested in Miro than an extended digression of the roots of experimental techno, I owe you a segue.</p>
+
+        <p>Like most SaaS product teams in 2023 post-ChatGPT, we added a conversational agent to our product. But Miro's unique product surface created unique challenges. Our data is visual, not inherently text based. Outside data flows into the product via embeds. Many widgets and formats — especially tables — are a view for much deeper data, sometimes contained on another board. And on top of it all, because AI interactions work best when they can use outside knowledge and context, we needed new ways to visualize external data connections as well.</p>
+
+        <p>Miro users are shifting from being direct authors of every idea — writing every sticky note, crafting every diagram by hand — to becoming curators. With AI in the mix, they're suddenly dealing with abstract data flow, reacting to generated content, and selecting the best outputs in a discovery loop. More and more, our interface is visualizing the flow of information between AI processes. We have inputs being transformed into outputs, context being read from the canvas, artifacts being created. Suddenly we are confronting the same need to visualize data flow that node-based music tools responded to decades ago.</p>
+
+        <h3>The Moment</h3>
+
+        <p>Last summer, we were working on what seemed like a fairly narrow problem. We'd already built the first version of Sidekicks, Miro's conversational AI, and we were trying to figure out how to put AI interactions into templates. Templates are crucial for feature discovery in Miro because they help us put our features in the context of real world scenarios and use cases. We needed a way to "templatize" AI to deliver specific AI interactions that could be repeated again and again, without the user having to come up with complicated prompts on their own.</p>
+
+        <p>We'd created a button that could trigger an AI conversation with a starter prompt, but it had serious limitations. Useful AI interactions need specific context: maybe the sticky notes in a particular frame, or votes on ideas, or a diagram as input. And they need to produce something specific: a doc, a table, an artifact you can share with colleagues.</p>
+
+        <figure>
+          <img alt="" src="https://cdn-images-1.medium.com/max/1024/1*xjF8SiT4peBgBAvgtdUgSg.png" />
+          <figcaption>An example of an action button in our <a href="https://miro.com/templates/ai-playground/">AI Playground template</a></figcaption>
+        </figure>
+
+        <p>In our first attempt, we built configuration menus. You'd open the button settings, choose a source frame from a dropdown, and select a target location for the output. It worked, technically, but it felt completely wrong. You were constantly jumping between the menu and the canvas, selecting things abstractly that were sitting right there visually.</p>
+
+        <figure>
+          <img alt="" src="https://cdn-images-1.medium.com/max/1024/1*7rtDb86u9jROTZqxqqOZDA.png" />
+          <figcaption>The sidekick action button config menu</figcaption>
+        </figure>
+
+        <p>And then one night I sat up in bed (literally!) and realized: <em>I want to configure this by drawing it. </em>And from years of experience playing around with synths, I knew exactly what to do.</p>
+
+        <p>The inputs and outputs shouldn't be dropdown selections . They should be visible connections, "cables" on the canvas. I wanted to see the flow, to make the invisible visible. I wanted to plug inputs into outputs, turn knobs and dials.<em> </em>I opened my laptop, threw together a sketch of the idea in a Miro board to remember, and went back to sleep. I woke up buzzing with excitement, went into the office, and fired off a demo video of the idea. You can check it out for yourself right here. I called it "Board Brain" at the time. Many thanks to the Miro PMM minds that gave it a better name :)</p>
+
+        <p>9 months later, we launched it on the stage at Miro's Canvas '25 in New York City. On my walk to Domino Sugar Factory, I walked right past the old Glasslands space (RIP) where I had performed years before, with a janky SM-57, a cheap audio interface, and a beat up laptop running a Pure Data patch for generative visuals. Now the same ideas, planted a decade before, powered a major Miro launch.</p>
+
+        <h3>Four reflections</h3>
+
+        <h4><strong>1. It Takes a Team</strong></h4>
+
+        <p>The initial insight was just that — an initial insight. From the moment we started using the proof of concept, it was clear things needed to change. What Flows became is the product of a team iterating relentlessly on the idea. I owe tremendous debt to the team that took the baton, in particular the brilliant design and product leads Ahmed Genaidy and Damir Disdarevic. Working in tight iteration loops with Ahmed, Damir, and our all-star engineering team on this has been a highlight of my career.</p>
+
+        <p>The visualization of connections evolved. We moved away from instruction blocks towards inline prompting and simpler flows. A top-to-bottom overhaul of the UX started as a hackathon project from passionate engineers over the summer. How users build flows, how they're displayed, how they execute, has all been refined and evolved. The consistent theme was <strong>simplification. </strong>We're not building for soldering-iron-wielding synth nerds, after all.</p>
+
+        <figure>
+          <div class="image-row">
+            <img alt="" src="https://cdn-images-1.medium.com/max/1024/1*RcfWQeE3wFjNZSFmwCXq2w.png" />
+            <img alt="" src="https://cdn-images-1.medium.com/max/1024/1*84C9iXuCaggr13hzRldfmA.png" />
+            <img alt="" src="https://cdn-images-1.medium.com/max/916/1*lc9krIOQ6VFzlc-crEmXRQ.png" />
+          </div>
+          <figcaption>Some screenshots of design evolution. Early concepts focused heavily on "Instruction blocks". Later versions evolved towards prompting inline on the formats themselves to reduce complexity and improve immediacy.</figcaption>
+        </figure>
+
+        <p>Even after many rounds, what exists today is just the beginning. We're learning with high speed from what our first customers are building, the limitations they're hitting, and the possibilities we never could have imagined when we started.</p>
+
+        <figure>
+          <div class="image-row">
+            <img alt="" src="https://cdn-images-1.medium.com/max/1024/1*uK7LwRpD0WkO4Qbv2-AbqA.png" />
+            <img alt="" src="https://cdn-images-1.medium.com/max/1024/1*QsMV9lIeVDliEf206gD2Wg.png" />
+            <img alt="" src="https://cdn-images-1.medium.com/max/1024/1*Izs0DOyYWodyv4lylmBNhg.png" />
+          </div>
+          <figcaption>Current state of the interface</figcaption>
+        </figure>
+
+        <p>The team has pushed the idea far beyond the initial seed, into a complex, enterprise ready workflow orchestration tool. We're seeing people build boards and Flows that go way beyond what I imagined in my first pitch.</p>
+
+        <figure>
+          <img alt="" src="https://cdn-images-1.medium.com/max/1024/1*dYCacN8rUKPPouwi9gUANg.png" />
+          <figcaption>Matt Kelland's Flow for generating training courses</figcaption>
+        </figure>
+
+        <p>Creativity benefits from collaboration. The best ideas come from cross-pollination and iteration. The feature that helps teams work this way was itself built this way, through a process of co-creaton and collaboration. This sort of recursion is something I've gotten used to on the AI team at Miro. As we transform our ways of working, the tool evolves, and as the tool evolves, so does our way of working. We are in a co-creative loop with the team, our customers, and with the tech itself.</p>
+
+        <p>Miro isn't alone in arriving at this paradigm. Tools like n8n, Flora, Hunch, Weavy, and others have independently developed node-based approaches to AI workflows, and lines are blurring with earlier generation automation tools like Zapier and IFTTT. I find that validating rather than threatening. I believe we're not just part of a trend — we've independently converged on a design solution because it's structurally right for the problem. Just as node-based interfaces emerged across different music tools because the problem demanded it, the same is happening now for AI orchestration.</p>
+
+        <h4><strong>2. What Makes Miro Different</strong></h4>
+
+        <p>If this is becoming a category, what's distinct about how Miro does it?</p>
+
+        <p>First, Miro is where ideas already live. We don't just pull data from external systems. Our home turf is messy early-stage thinking that's native to the canvas. Brainstorm sticky notes, rough diagrams, a napkin sketch, user quotes in stickies are our raw material.</p>
+
+        <p>Second, Miro is collaborative by default. Creativity is social. You're building on teammates' contributions, riffing and yes-anding, synthesizing different perspectives. We know from years of building Miro that this is how good ideas develop. Bringing AI into a collaborative environment makes a big difference in quality of results achieved.</p>
+
+        <p>Third, there's an immediacy and tangibility to Miro that goes beyond typical AI workflow tools. Our whiteboard lineage started in the physical world! Mnay of our design choices optimize for data tactility and manipulability. In modular synthesizers, the magic isn't just in the wires, but also the knobs. You can reach over, tweak a parameter while the system is running, hear the change instantly.</p>
+
+        <p>In Miro, your inputs and outputs are right there on the canvas. You can edit the sticky notes, rearrange the diagram to create a different hierarchy, sort or group a table, change the dates in a timeline. You're not shipping data off to an external system and waiting for results. The abstract workflow and the manipulable content exist on the same surface.</p>
+
+        <h4><strong>3. Unpredictability, Collaboration, and Creative Surrender</strong></h4>
+
+        <p>In modular setups, sources of randomness are some of the most important elements. White noise, unsynced LFOs, electrodes stuck to a plant, a live data feed from the S&amp;P 500 — all of this and more has been used to inject life into generative compositions. This creates spontaneity and perceived humanity in what would otherwise be mechanical systems. Determinism sounds sterile; unpredictability can help it breathe. You have an incredible ear for repetition, even if you're not musical. Disrupting this is key to create interest.</p>
+
+        <p>You don't fully control what AI generates, no matter how specific your prompting. In a collaborative environment, your teammates add their own kind of unexpected (but ultimately invaluable) chaos: ideas you didn't expect, directions you wouldn't have taken.</p>
+
+        <p>One of the core design rules of my modular setup—<a href="https://modulargrid.net/e/racks/view/1340346">ModularGrid link for the nerds</a>—is <strong>no direct sequencing. </strong>There are plenty of modules to program in melodies, drum steps, and so on, but I don't use them, by design. I find that "writing brain" is different than "explorer brain", and I've specifically designed the system to spend as much time in the latter mode as possible.</p>
+
+        <p>I believe there's a similar dynamic to creative collaboration. "Command and control" bulldozes past quiet ideas that emerge in a curated garden but not an architected skyscraper.</p>
+
+        <h4><strong>4. Why Customers Respond</strong></h4>
+
+        <p>One of the most interesting aspects of this product to me is how immediate and enthusiastic the customer response has been. This initiative acquired hurricane force within Miro, in part because everyone we showed it to had a sort of lightbulb moment with AI. When I reflect on this, I think about how the chat interface (while immensely flexible) has some serious drawbacks for AI comprehension, and there is power in providing an alternative.</p>
+
+        <p>AI is a black box. It's hard to understand what it actually does and why it produces what it produces. When you interact with a chat, there is a natural tendency to personify it, and the major AI labs actively encourage this! But it's not a human. In the end, LLMs are information processors. Good results come from thoughtfully constructed context and intentional, structured output. Perhaps it's not so surprising that code is one of the early killer use cases. Code is structured language, so some of the constraints for good results are baked in. But for messier knowledge work, it's less effective, since the data is inherently less structured. It's hard to nudge people towards the behaviors that drive good output in infinite possibility space of a blinking cursor in a chat box.</p>
+
+        <p>Flows is a little different. When someone looks at a Flow, they're not just seeing a product interface, they're seeing a visualization of information moving through a system. Context goes in here, transformation happens in the nodes, output lands there. It's literally a mental map, a diagram of the system, that is both functional and visualized on the canvas. And here we come full circle back to modular patching. It's all data, all control signal, all voltage. And for the first time, it has knobs and dials, not just a squishy chat box.</p>
+
+        <p>That legibility is powerful because it helps people understand AI in a way they didn't before. The wires make the invisible visible, and comprehension follows.</p>
+
+        <h3>Wrapping up</h3>
+
+        <p>It's a well-known truth that creative processes benefit from cross-pollination and collaboration. We think about that explicitly all the time at Miro. It's why we exist, and we try to design this DNA into every interaction. But I'm still a little surprised and moved that when we reached for a new way to interact with AI, this obscure hobby that I hold so much love for provided such a rich source of ideas.</p>
+
+        <p>I don't think this is the only answer for AI UI. We have Sidekicks (conversational AI) in Miro as well, and it's for a reason. For certain kinds of thinking, you want to talk to someone! It's an intuitive interaction paradigm, and it's infinitely flexible. My takeaway from developing Flows is that conversation is one of several options, and there's huge value in designing alternatives for tasks with different needs.</p>
+
+        <p>I know that many people are anxious about AI right now, for good reasons. (I count myself among them.) But the best version of this technology, and the one I hope to contribute to in some way, is the version that amplifies human creativity. Key to this is giving us better interfaces — not to sit back and accept slop, but to lean forward and be able to tweak, steer, shape, collaborate. Artistic disciplines and creative software have a lot to teach us, as they've been dealing with the design challenge of creating satisfying results in messy, technical collaboration with unpredictable agents for a long time.</p>
+
+        <p>As we go further into Flows, Sidekicks, and what we're planning for next year, I'm excited to keep pushing on this — patching cables, tweaking knobs, and seeing what new ideas we discover in the infinite possibility space.</p>
+      </div>
+    </article>
+    <a class="back-link" href="../index.html">&larr; Back to home</a>
+    <footer>
+      <p>Joe McLean &mdash; 2026</p>
+    </footer>
+  </div>
+  <script>
+    document.querySelectorAll('.image-row img').forEach(img => {
+      function setFlex() {
+        img.style.flex = (img.naturalWidth / img.naturalHeight).toFixed(3) + ' 1 0%';
+      }
+      if (img.complete) setFlex();
+      else img.addEventListener('load', setFlex);
+    });
+  </script>
+</body>
+</html>

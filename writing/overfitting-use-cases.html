@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Overfitting and the problem with use cases — Joe McLean</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div class="site">
+    <a class="back-link" href="../index.html">&larr; Back to home</a>
+    <article>
+      <div class="article-header">
+        <h1>Overfitting and the problem with use cases</h1>
+        <p class="article-meta">May 2023 · Originally on <a href="https://medium.com/design-bootcamp/overfitting-and-the-problem-with-use-cases-337d9f4bf4d7">Medium</a></p>
+      </div>
+      <div class="prose">
+        <p>As a Miro PM with lots of collaborators, I sit in a lot of early-stage product and design reviews (including my own). I hear a question frequently: "What's the use case?"</p>
+        <p>This always <em>feels</em> like a good question. It puts us in the shoes of the user, makes us imagine real world scenarios.</p>
+        <p>But — if you're designing a creator tool, it often leads to bad design.</p>
+        <p>It's tricky because this use case question is <em>really good advice </em>for transactional processes. Let's take Uber as an example. If my use case is to get across town, that's a fundamentally different flow than ordering sushi. It makes sense that the app would catch me as early as possible and send me down a route that matches my use case and criteria as exactly as possible. They may use shared design system components, and use a lot of the same backend infrastructure. But it's fine if the flows are highly specialized, because the task is too. There's a set of steps for me to go through as I proceed linearly towards my goal. Good design for a transactional app is mainly about modeling the process with maximum accuracy and minimizing anxiety as I proceed linearly towards a clearly defined objective.</p>
+        <p>But if you're designing a creative tool, this breaks down completely. Use case modeling lead to a common design anti-pattern that I call<strong> overfitting.</strong></p>
+        <p><a href="https://en.wikipedia.org/wiki/Overfitting">Overfitting</a> is a borrowed idea from statistical modeling, and more recently very relevant to machine learning. Essentially: if you introduce too many variables into a statistical model, it will predict your test data with remarkable accuracy. But the minute you try to apply it to another data set, it loses its predictive power. The model has over-optimized on a specific set of data and in doing so, lost its general use.</p>
+        <p>If this sounds abstract, an example in the physical world may help.</p>
+        <p>Let's say you're a user researcher at IKEA. The company rolled out a new cabinet line, but people keep returning it because they can't figure out how to assemble it properly when they get home.</p>
+        <p>You schedule user interviews to hear about their problems. Many of them have never assembled a cabinet before. They need some guidance. They don't feel comfortable with a tool in their hands — many describe feeling intimidated. So you map out a their process. Maybe you ask how technology could help.</p>
+        <p>At some point someone has a bright idea — robotics are getting cheaper every year. What if we built a cabinet assembly machine at checkout where users could specify parameters and watch it get assembled in the store? Maybe a fancy terminal with a wizard to walk you through the process? Might sound a little crazy, but none of our competitors have this — it could be a differentiator. Maybe throw a NLP layer on top to capitalize on some of that AI buzz.</p>
+        <p>So someone builds a prototype, and it works surprisingly well. Users love it in testing. And just like that, Cabinet Assembler 3000 (internal name) is born.</p>
+        <p>But then it lands in stores, and the real trouble starts. Some people need a cabinet with three shelves, not two. This didn't come up in testing, since it was all hypothetical. But now that they're actually trying to make the one that will go in their bathroom, new needs emerge. One person needs to swap the front panel for a mirror. Can you do that? New materials are coming out next season — can the machine handle that? Before long, the cabinet assembler isn't easy to use at all. It has layers of menus for materials and parameters. Now that everyone's assembling in store, they need a way to get it home. One customer wants 100 cabinets — the machine isn't designed for this and it breaks down completely. Then someone asks — wait, why can't I use this for any of the other furniture? And now every individual product team internally starts coordinating on a cross-company initiative to platformize the cabinet assembler…</p>
+        <p><strong>The problem is that this solution is overfit. </strong>It accomplishes one goal — but as soon as it needs to do something else, it's almost back to square one. Cabinet Assembler 3000 users haven't picked up portable knowledge or skills. They need a new machine if they have a new use case. It's going to have its own menus and options and configuration and edge cases.</p>
+        <p>They didn't need a cabinet assembler — they needed a screwdriver and a set of instructions. Maybe tutorial videos if you're feeling fancy.</p>
+        <p>What's the use case for a screwdriver? It can assemble a cabinet, sure. But it can also tighten the brakes on your bike, or unscrew a light fixture, or open a paint can, or any one of a thousand other uses. It's a basic tool.</p>
+        <figure><img alt="A rack of chisels, saws, planes, and screwdrivers on a wall behind a workbench" src="https://cdn-images-1.medium.com/max/1024/1*4bewn2b3scBt9pIJCOpxeA.jpeg" /></figure>
+        <p>At Miro, our "screwdriver" is the sticky note. It's used to accomplish a crazy range of objectives and tasks. It can capture comments, feedback, action items, assigned speakers, agenda time, user feedback, technical tasks, roadmap items… These can be manipulated, organized, sorted to capture all sorts of meaning.</p>
+        <p>This flexibility comes from its simplicity — it's a square you type in to make a single, movable data point. Its proximity, distance, grouping, color can all convey information. Users' creativity gives the sticky its power.</p>
+        <p>The bar to exceed the sticky for a given task is very high. It usually requires specialization to a specific persona or workflow. For example — we have a Kanban board that makes it easier to set up columns for status and drag to prioritize. But you can't use it for annotating a mockup for feedback — its use narrows with specialization.</p>
+        <p>This is fine and often useful. But in aggregate it leads to great complexity. Do this too many times and the product loses its accessibility to beginners who haven't yet developed the deeper needs.</p>
+        <p>I believe that designing great creative software tools is not about designing cabinet assembly machines. It's about giving users a high quality toolbox of screwdrivers, hammers, and wrenches. It's about seeing the shared needs across many use cases and designing the simplest possible set of devices that allow the user to accomplish their objectives.</p>
+        <p>Users bring their own creative goals to our product. They're incredibly diverse and often non-linear. I believe it's best to think of a use case as a <strong>test case</strong> to see if your basic tools are working. What's missing from the toolbox? What are the limits of what's available? What 4 use cases would open up with the addition of one more tool?</p>
+        <p><strong>Use cases should be applied after design is done </strong>— to check if the tools available can accomplish the job. As a starting point, they put you in a mindset to overfit. This is especially dangerous because users will often tell you they love it in concept testing. "Ah yes, here is my process, represented in pictures!" But it's only when you actually try to use the tool — hold the thing in your hands — that there's a hundred things you need it to do that it doesn't. It's not flexible — it's a series of menus and disappointed feature requirements.</p>
+        <p>Some warning signs you're overfitting in a creator tool:</p>
+        <ul>
+          <li>Leaning too hard on a wizard or onboarding</li>
+          <li>Presenting nonlinear process steps as a linear flow</li>
+          <li>Redesigning flows when you add a use case</li>
+          <li>Too many flows that live outside the main creative workspace</li>
+        </ul>
+        <p>It takes constant discipline and diligence to avoid overfitting. It's a logical fallacy of design, a common trap. When you start noticing it you'll see it everywhere. It's very common that your first design idea will be overfit. It's useful to interrogate a concept and ask — <strong>is there a deeper, more fundamental need?</strong> Could we reduce this concept until that is the only part that remains? What other possibilities unlock with a simpler, more general tool?</p>
+        <p>The best antidote to overfitting is a simple question: <strong>Am I building a screwdriver or a cabinet assembler?</strong></p>
+      </div>
+    </article>
+    <a class="back-link" href="../index.html">&larr; Back to home</a>
+    <footer>
+      <p>Joe McLean &mdash; 2026</p>
+    </footer>
+  </div>
+</body>
+</html>
