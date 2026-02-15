@@ -154,6 +154,10 @@ section h2 {
   color: var(--text-secondary);
 }
 
+article + .back-link {
+  margin-top: 3rem;
+}
+
 .prose p {
   margin-top: 1.25rem;
 }
