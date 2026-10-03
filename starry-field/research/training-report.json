@@ -1,0 +1,18 @@
+{
+  "seed": 19,
+  "training_samples": 12000,
+  "held_out_samples": 4000,
+  "steps": 7000,
+  "parameters": 1442,
+  "median_angle_error_degrees": 0.5587421386200815,
+  "p90_angle_error_degrees": 2.188713154495094,
+  "mean_angle_error_degrees": 1.3230272905750502,
+  "training_source": "synthetic authored sky line field; no painting images",
+  "architecture": [
+    9,
+    32,
+    32,
+    2
+  ],
+  "domain": "periodic sky longitude u in [0,1], latitude coordinate v in [0.45,0.98]"
+}

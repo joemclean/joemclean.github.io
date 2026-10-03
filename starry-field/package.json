@@ -1,0 +1,1 @@
+{"name":"starry-field","private":true,"type":"module","scripts":{"check":"node research/check.mjs"}}

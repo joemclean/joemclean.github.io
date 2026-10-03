@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Starry Field — a painting you can walk through</title>
+<meta name="description" content="Wander an endless painted nightscape of lantern-lit streets, cypress groves, stone bridges, hillside gardens, and starry skies.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d1830'/%3E%3Cpath d='M10 39Q25 6 46 24T22 48' fill='none' stroke='%23ecc76a' stroke-width='6'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="world" aria-label="Interactive three dimensional painted nightscape"></canvas>
+<header class="toolbar">
+ <select id="view" aria-label="View mode"><option value="paint">Painted frame</option><option value="undercoat">Paint undercoat</option><option value="raw">Original game frame</option><option value="field">Brush directions</option><option value="split">Before / after</option></select>
+ <button id="settings" aria-label="Studio settings" aria-expanded="false" aria-controls="panel"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.4 3-.5 2a7.4 7.4 0 0 0-1.6.9l-2-.6-2.6 4.4 1.5 1.4a7.7 7.7 0 0 0 0 1.8l-1.5 1.4 2.6 4.4 2-.6a7.4 7.4 0 0 0 1.6.9l.5 2h5.2l.5-2a7.4 7.4 0 0 0 1.6-.9l2 .6 2.6-4.4-1.5-1.4a7.7 7.7 0 0 0 0-1.8l1.5-1.4-2.6-4.4-2 .6a7.4 7.4 0 0 0-1.6-.9l-.5-2Z"/><circle cx="12" cy="12" r="3.2"/></svg></button>
+</header>
+<aside id="panel" aria-label="Studio" hidden>
+ <div class="panel-head"><h2>Studio</h2></div>
+ <label>Steering<select id="controller"><option value="rules">Image flow + authored prior</option><option value="learned" disabled>Learned prior · loading</option></select></label>
+ <label class="range">Inertia <output id="inertia-out">1.00</output><input id="inertia" type="range" min="0" max="1" step="0.01" value="1.00"></label>
+ <label class="range">Damping <output id="damping-out">0.50</output><input id="damping" type="range" min="0" max="1" step="0.01" value="0.50"></label>
+ <label class="range">Brush size <output id="size-out">1.14</output><input id="size" type="range" min="0.55" max="1.65" step="0.01" value="1.14"></label>
+ <label class="range">Grid spacing <output id="grid-out">11 px</output><input id="grid" type="range" min="6" max="24" step="1" value="11"></label>
+ <label class="range">Adaptive detail <output id="detail-out">0.65</output><input id="detail" type="range" min="0" max="1" step="0.01" value="0.65"></label>
+ <label class="range">Density adaptation <output id="density-out">0.65</output><input id="density" type="range" min="0" max="1" step="0.01" value="0.65" title="0: unchanged density. Higher: more fine strokes near contrast and distant geometry."></label>
+ <label class="range">Edge fitting <output id="edges-out">0.70</output><input id="edges" type="range" min="0" max="1" step="0.01" value="0.70"></label>
+ <details class="brush-controls"><summary>Brush shape</summary>
+  <label class="range">Length <output id="length-out">1.48</output><input id="length" type="range" min="0.5" max="1.6" step="0.01" value="1.48"></label>
+  <label class="range">Width <output id="width-out">0.71</output><input id="width" type="range" min="0.5" max="1.6" step="0.01" value="0.71"></label>
+  <label class="range">Curvature <output id="curvature-out">1.68</output><input id="curvature" type="range" min="0" max="2" step="0.01" value="1.68"></label>
+  <label class="range">Size variance <output id="variance-out">0.76</output><input id="variance" type="range" min="0" max="1" step="0.01" value="0.76"></label>
+  <label class="range">Texture <output id="texture-out">1.70</output><input id="texture" type="range" min="0" max="3" step="0.01" value="1.70"></label>
+ </details>
+ <label class="range">Motion <output id="motion-out">3.03</output><input id="motion" type="range" min="0" max="4" step="0.01" value="3.03"></label>
+ <div class="buttons"><button id="stir">Send a ripple</button><button id="settle">Settle</button></div>
+ <div class="buttons"><button id="journey" aria-pressed="false">Camera journey</button><button id="home">Return home</button></div>
+ <div class="metrics"><span id="fps">— fps</span><span id="cpu">— ms CPU</span><span id="energy">— cells</span></div>
+</aside>
+<div class="stick-control move-control"><div id="joystick" class="joystick" aria-label="Move joystick"><div id="thumb" class="thumb"></div></div><span>Move</span></div>
+<div class="stick-control look-control"><div id="look-joystick" class="joystick" aria-label="Look around joystick"><div id="look-thumb" class="thumb"></div></div><span>Look around</span></div>
+<div id="crosshair" aria-hidden="true"></div>
+<div id="error" role="alert" hidden></div>
+<script type="module" src="app.js"></script>
+</body></html>
